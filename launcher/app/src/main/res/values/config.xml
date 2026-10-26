@@ -29,12 +29,33 @@
 
     <!-- Apps never shown as tiles (e.g. the Live TV app, which the Inputs menu already covers). -->
     <string-array name="hidden_apps">
-        <item>com.mediatek.wwtv.tvcenter</item>
+        <item>com.apps.livetv</item>
         <item>com.mitv.gallery</item>
+        <item>com.android.tv.settings</item>
+        <item>com.android.vending</item>
+        <item>com.apps.function.audiolink</item>
+        <item>com.apps.usbmediaplayer</item>
+        <item>com.google.android.youtube.tvmusic</item>
+        <item>com.apps.channels</item>
+        <item>com.apps.clear</item>
+        <item>com.apps.networkspeed</item>
+        <item>com.apps.ota</item>
+        <item>com.creative.fastscreen.tv</item>
+        <item>com.google.android.play.games</item>
+        <item>com.google.android.videos</item>
+        <item>com.mk.tv.meeting</item>
+        <item>com.mk.tv.timeclock</item>
+        <item>com.apple.atve.androidtv.appletv</item>
+        <item>com.ddnational.prasarbharati</item>
+        <item>com.graymatrix.did</item>
+        <item>com.lionsgateplay.videoapp</item>
+        <item>com.sonyliv</item>
+        <item>tv.airtel.xstream.tvapp</item>
+        <item>io.github.singhalgoru.watchroom</item>
     </string-array>
 
     <!-- The TV's Live TV / tuner app, offered at the end of the Inputs menu. Leave empty to omit. -->
-    <string name="live_tv_package" translatable="false">com.mediatek.wwtv.tvcenter</string>
+    <string name="live_tv_package" translatable="false">com.apps.livetv</string>
 
     <!-- Open the Live TV app above the first time Home comes up after the TV is switched on, for sets that are
          mostly used for broadcast TV. Once per boot: Home after that stays Home. Can also be set with
@@ -198,7 +219,7 @@
          com.xgimi.xrmservice does, on every one of its remote keys, power included (docs/TROUBLESHOOTING.md).
          Whenever that launcher's home screen comes up anyway, HomeKeyService (HOME_KEY_SERVICE=1) sends the TV
          straight back here. A theme's config.json can set it too. Leave empty to omit. -->
-    <string name="stock_home_redirect" translatable="false"></string>
+    <string name="stock_home_redirect" translatable="false">com.google.android.tvlauncher</string>
 
     <!-- For TVs whose firmware opens the Live TV app (live_tv_package) by itself at every power-on, with no setting
          to change it (Changhong / Homwee boards start com.mediatek.wwtv.tvcenter from its own boot receiver, which
@@ -235,7 +256,7 @@
     <string name="locale" translatable="false"></string>
 
     <!-- A name after the greeting: "Mr. Trịnh" shows GOOD MORNING, MR. TRỊNH. Empty: the greeting alone. -->
-    <string name="greeting_name" translatable="false"></string>
+    <string name="greeting_name" translatable="false">Gourav</string>
     <!-- The greeting above the clock ("Good evening"). false hides it. Can also be set with "show_greeting" in a theme. -->
     <bool name="show_greeting">true</bool>
     <!-- The date and the line between the clock and the date in the clock's full white instead of dimmed. Can also be
@@ -266,7 +287,7 @@
     <!-- The dock band as light frosted glass, like the Inputs, Wi-Fi and Settings pills, so a sky or wallpaper shows
          through it. false (the default) keeps the solid near-black band, or the cinematic shelf's dark glass. Can
          also be set with "dock_glass": true in a theme's config.json. -->
-    <bool name="dock_glass">false</bool>
+    <bool name="dock_glass">true</bool>
     <!-- Draw the dock band and its edge. false leaves the tiles floating on the wallpaper (config.xml dock_band). -->
     <bool name="dock_band">true</bool>
     <!-- Every app in one row: the dock apps first, the rest after them, and the row scrolls sideways when focus
@@ -285,7 +306,7 @@
     <bool name="reorder_button">false</bool>
     <!-- Wi-Fi and Settings as round icon-only buttons (the network name moves to the talkback description);
          Inputs keeps its label. -->
-    <bool name="icon_only_buttons">false</bool>
+    <bool name="icon_only_buttons">true</bool>
     <!-- The Inputs pill as a round icon button too (the label moves to the talkback description). -->
     <bool name="icon_only_inputs">false</bool>
     <!-- true colours the Wi-Fi pill's icon green while the TV is online and leaves it white while it is not (dark on
@@ -344,7 +365,7 @@
 
     <!-- The focused dock app's name in large type above the dock. false keeps only the glow, which leaves room
          for bigger tiles when rows_below_dock is 2 or 3. -->
-    <bool name="dock_title">true</bool>
+    <bool name="dock_title">false</bool>
 
     <!-- Tiles per row in the grid; the dock always has this many slots. Tiles are 180dp wide at 4 columns and
          shrink to fit from 5 up (about 144dp at 5, 117dp at 6 on a 1080p TV). -->
@@ -359,7 +380,7 @@
     <bool name="show_home_settings_shortcut">false</bool>
 
     <!-- Installed launchable apps, including ordinary Android apps. Also settable in config.json. -->
-    <bool name="app_library">false</bool>
+    <bool name="app_library">true</bool>
     <!-- Every app tile is its icon on a card tinted from that icon, name only under the focused tile,
          instead of each app's own banner. Off by default; a theme can set "uniform_tiles": true. -->
     <bool name="uniform_tiles">false</bool>
@@ -369,7 +390,7 @@
     <!-- OK opens every app in the library, not only the apps on Home: for a library that holds the apps a theme
          keeps off Home with hidden_apps. Hold OK still offers Add to Home. app_library_selection wins when both are
          on. Off by default; a theme can set "library_ok_opens": true (also needs app_library). -->
-    <bool name="library_ok_opens">false</bool>
+    <bool name="library_ok_opens">true</bool>
 
     <!-- Apps pre-seeded into the App library's "added" set at startup (config.xml library_apps, or a theme's
          config.json). They show on Home as if the owner had added them in the App library UI, and stay
@@ -388,13 +409,13 @@
          slides with no bounce and settles within 5 frames, every animation lasts 90 ms or less, names, top
          shelf, glow and highlight appear instead of fading, and there is no tile entrance. Set it
          here or with "reduced_motion": true in a theme's config.json; false keeps the normal motion. -->
-    <bool name="reduced_motion">false</bool>
+    <bool name="reduced_motion">true</bool>
 
     <!-- The glass highlight springs past the tile it moves to and the focused tile zooms past its size
          before settling. false: both go straight there, with no bounce, while scrolling stays smooth
          (reduced_motion also removes the overshoot, but scrolls in one jump). Can also be set with
          "focus_overshoot" in a theme's config.json. -->
-    <bool name="focus_overshoot">true</bool>
+    <bool name="focus_overshoot">false</bool>
 
     <!-- One line under the clock: CPU, free memory and free storage. Off by default; a theme can set
          "show_stats": true. Nothing is read, and the clock does not move, while this is false. -->
@@ -404,7 +425,7 @@
          horizon glow around sunrise and sunset. 0 keeps the plain background (the default); 1 to 100
          sets its opacity. Around 60 reads clearly without hiding a wallpaper. Can also be set with
          "sky_intensity": 60 in a theme's config.json. -->
-    <integer name="sky_intensity">0</integer>
+    <integer name="sky_intensity">60</integer>
     <!-- Where the TV is, in decimal degrees, so the sky's sunrise and sunset glows follow the real sun
          (computed on the TV, no network). Empty: a fixed temperate day, sunset glow around 19:00.
          Vilnius: 54.69 and 25.28. -->
@@ -433,7 +454,7 @@
     <!-- The glow behind the dock in the focused app's colour (red for YouTube, blue for Prime Video). false keeps
          only background_color or the wallpaper behind everything. Can also be set with "ambient_glow": false in a
          theme's config.json. -->
-    <bool name="ambient_glow">true</bool>
+    <bool name="ambient_glow">false</bool>
     <!-- The focus highlight glows in the focused app's colour on every tile, as the cinematic shelf does for the
          dock, without cinematic_home. Can also be set with "app_glow": true in a theme's config.json. -->
     <bool name="app_glow">false</bool>
